@@ -43,8 +43,9 @@ public class Main {
         }
         ParallelMax [] parallelMax = new ParallelMax[5];
         int maximum=0;
-        for(int i=0;i<5;i++){
+        for(int i=0;i<5;i++)
             parallelMax[i]=new ParallelMax(numbers,i);
+        for(int i=0;i<5;i++){
             try {
                 parallelMax[i].getThread().join();
                 if(i==0)maximum=parallelMax[i].getMaximum();
@@ -53,7 +54,10 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
         System.out.println(maximum);
+
+
 
     }
 }
